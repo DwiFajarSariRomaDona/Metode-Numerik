@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newton-Gregory dan Regresi Linear</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Metode Numerik: Newton-Gregory dan Regresi Linear</h1>
+        <div class="form-group">
+            <label for="xValues">Masukkan nilai x (dipisahkan dengan koma):</label>
+            <input type="text" id="xValues" class="form-control" placeholder="Contoh: 1,2,3">
+        </div>
+        <div class="form-group">
+            <label for="yValues">Masukkan nilai y (dipisahkan dengan koma):</label>
+            <input type="text" id="yValues" class="form-control" placeholder="Contoh: 2,3,5">
+        </div>
+        <div class="form-group">
+            <label for="interpolationValue">Nilai untuk interpolasi (Newton-Gregory):</label>
+            <input type="text" id="interpolationValue" class="form-control" placeholder="Contoh: 1.5">
+        </div>
+        <button class="btn btn-primary" onclick="calculateNewtonGregory()">Hitung Interpolasi (Newton-Gregory)</button>
+        <button class="btn btn-secondary" onclick="calculateLinearRegression()">Hitung Regresi Linear</button>
+        <div class="mt-3">
+            <h3>Hasil:</h3>
+            <p id="resultNG"></p>
+            <p id="resultLR"></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
