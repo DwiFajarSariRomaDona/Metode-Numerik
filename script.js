@@ -10,7 +10,7 @@ function newtonGregoryForward(x, y) {
     }
     for (let j = 1; j < n; j++) {
         for (let i = 0; i < n - j; i++) {
-            diff[i][j] = diff[i + 1][j - 1] - diff[i][j - 1];
+            diff[i][j] = (diff[i + 1][j - 1] - diff[i][j - 1]) / (x[i + j] - x[i]);
         }
     }
     return diff[0];
@@ -22,14 +22,9 @@ function evaluateNewtonGregory(x, diff, value) {
     let product = 1.0;
     for (let i = 1; i < n; i++) {
         product *= (value - x[i - 1]);
-        result += diff[i] * product / factorial(i);
+        result += diff[i] * product;
     }
     return result;
-}
-
-function factorial(num) {
-    if (num <= 1) return 1;
-    return num * factorial(num - 1);
 }
 
 function linearRegression(x, y) {
@@ -48,7 +43,7 @@ function linearRegression(x, y) {
 }
 
 function formatNumber(num) {
-    return num % 1 === 0 ? num.toString() : num.toFixed(2).replace(/\.?0+$/, '');
+    return num % 1 === 0 ? num.toString() : num.toFixed(6).replace(/\.?0+$/, '');
 }
 
 function calculateNewtonGregory() {
